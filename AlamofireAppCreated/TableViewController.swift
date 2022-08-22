@@ -9,13 +9,24 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    let viewModel = TableViewModel()
+    var viewmodel : TableViewModel {
+        return controller.viewmodel
+    }
+    lazy var controller: TableController = {
+        return TableController()
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         let createPostNib = UINib(nibName: "PostsTableViewCell", bundle: nil)
         tableView.register(createPostNib, forCellReuseIdentifier: "cell")
         initBinding()
-        viewModel.gettingDataOfPost()
+        controller.start()
+    }
+    func initBinding(){
+        viewmodel.getPostModel.addObserver(fireNow:false){ [weak self ] (getPostModel) in
+            self?.tableView.reloadData()
+        }
+        
     }
 
     
@@ -28,23 +39,22 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return viewModel.getPostModel.value.count
+        return viewmodel.getPostModel.value.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PostsTableViewCell
-        cell.postDataLabel.text = viewModel.getPostModel.value[indexPath.row].postData
+        
+        let  rowViewModel = viewmodel.getPostModel.value[indexPath.row]
+        if let cell = cell as? CellConfigurable {
+            cell.setup(viewModel: rowViewModel )
+        }
+
+        cell.layoutIfNeeded()
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 300
     }
-    func initBinding(){
-        viewModel.getPostModel.addObserver(fireNow:false){ [weak self ] (getPostModel) in
-            self?.tableView.reloadData()
-        }
-        
-    }
     
-    
-    
+
 }

@@ -20,6 +20,12 @@
 		D58A275028AD350C00880BF6 /* NetworkingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A274F28AD350C00880BF6 /* NetworkingLayer.swift */; };
 		D58A275228AD351200880BF6 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58A275128AD351200880BF6 /* Observable.swift */; };
 		D58A275428AD351700880BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58A275328AD351700880BF6 /* Main.storyboard */; };
+		D5DBF5CC28AE44DA00363E31 /* PutLikesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF5CB28AE44DA00363E31 /* PutLikesModel.swift */; };
+		D5DBF5CF28AE464E00363E31 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF5CE28AE464E00363E31 /* Urls.swift */; };
+		D5DBF5D328AE4A2100363E31 /* PostTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF5D228AE4A2100363E31 /* PostTableViewCellViewModel.swift */; };
+		D5DBF5D828AF562500363E31 /* RowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF5D728AF562500363E31 /* RowViewModel.swift */; };
+		D5DBF5DC28AF566000363E31 /* CellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF5DB28AF566000363E31 /* CellConfigurable.swift */; };
+		D5DBF5DE28AF5C0C00363E31 /* TableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DBF5DD28AF5C0C00363E31 /* TableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +46,12 @@
 		D58A274F28AD350C00880BF6 /* NetworkingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingLayer.swift; sourceTree = "<group>"; };
 		D58A275128AD351200880BF6 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		D58A275328AD351700880BF6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D5DBF5CB28AE44DA00363E31 /* PutLikesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutLikesModel.swift; sourceTree = "<group>"; };
+		D5DBF5CE28AE464E00363E31 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		D5DBF5D228AE4A2100363E31 /* PostTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		D5DBF5D728AF562500363E31 /* RowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowViewModel.swift; sourceTree = "<group>"; };
+		D5DBF5DB28AF566000363E31 /* CellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellConfigurable.swift; sourceTree = "<group>"; };
+		D5DBF5DD28AF5C0C00363E31 /* TableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +80,6 @@
 				56EA724BFBA5CECF5D2D487C /* Pods-AlamofireAppCreated.debug.xcconfig */,
 				B38A154B123450A636D01581 /* Pods-AlamofireAppCreated.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,18 +107,56 @@
 				D58A273128AD34C400880BF6 /* AppDelegate.swift */,
 				D58A273328AD34C400880BF6 /* SceneDelegate.swift */,
 				D58A274528AD34EB00880BF6 /* TableViewController.swift */,
+				D5DBF5DD28AF5C0C00363E31 /* TableController.swift */,
 				D58A274728AD34F200880BF6 /* TableViewModel.swift */,
-				D58A274928AD34F800880BF6 /* PostsTableViewCell.swift */,
-				D58A274B28AD34FF00880BF6 /* PostsTableViewCell.xib */,
-				D58A274D28AD350600880BF6 /* GetPostModel.swift */,
-				D58A274F28AD350C00880BF6 /* NetworkingLayer.swift */,
+				D5DBF5D728AF562500363E31 /* RowViewModel.swift */,
+				D5DBF5DB28AF566000363E31 /* CellConfigurable.swift */,
+				D5DBF5D628AE4A4000363E31 /* Cells */,
 				D58A275128AD351200880BF6 /* Observable.swift */,
+				D5DBF5CD28AE461600363E31 /* Model */,
+				D5DBF5D128AE49C100363E31 /* Network */,
 				D58A275328AD351700880BF6 /* Main.storyboard */,
 				D58A273A28AD34C500880BF6 /* Assets.xcassets */,
 				D58A273C28AD34C500880BF6 /* LaunchScreen.storyboard */,
 				D58A273F28AD34C500880BF6 /* Info.plist */,
 			);
 			path = AlamofireAppCreated;
+			sourceTree = "<group>";
+		};
+		D5DBF5CD28AE461600363E31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D58A274D28AD350600880BF6 /* GetPostModel.swift */,
+				D5DBF5CB28AE44DA00363E31 /* PutLikesModel.swift */,
+				D5DBF5D028AE465300363E31 /* EnumUrl */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D5DBF5D028AE465300363E31 /* EnumUrl */ = {
+			isa = PBXGroup;
+			children = (
+				D5DBF5CE28AE464E00363E31 /* Urls.swift */,
+			);
+			path = EnumUrl;
+			sourceTree = "<group>";
+		};
+		D5DBF5D128AE49C100363E31 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D58A274F28AD350C00880BF6 /* NetworkingLayer.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D5DBF5D628AE4A4000363E31 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D58A274B28AD34FF00880BF6 /* PostsTableViewCell.xib */,
+				D58A274928AD34F800880BF6 /* PostsTableViewCell.swift */,
+				D5DBF5D228AE4A2100363E31 /* PostTableViewCellViewModel.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,14 +275,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5DBF5DE28AF5C0C00363E31 /* TableController.swift in Sources */,
 				D58A274828AD34F200880BF6 /* TableViewModel.swift in Sources */,
 				D58A273228AD34C400880BF6 /* AppDelegate.swift in Sources */,
 				D58A274E28AD350600880BF6 /* GetPostModel.swift in Sources */,
 				D58A275228AD351200880BF6 /* Observable.swift in Sources */,
 				D58A274A28AD34F800880BF6 /* PostsTableViewCell.swift in Sources */,
+				D5DBF5D828AF562500363E31 /* RowViewModel.swift in Sources */,
+				D5DBF5DC28AF566000363E31 /* CellConfigurable.swift in Sources */,
 				D58A275028AD350C00880BF6 /* NetworkingLayer.swift in Sources */,
+				D5DBF5D328AE4A2100363E31 /* PostTableViewCellViewModel.swift in Sources */,
+				D5DBF5CC28AE44DA00363E31 /* PutLikesModel.swift in Sources */,
 				D58A273428AD34C400880BF6 /* SceneDelegate.swift in Sources */,
 				D58A274628AD34EB00880BF6 /* TableViewController.swift in Sources */,
+				D5DBF5CF28AE464E00363E31 /* Urls.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
